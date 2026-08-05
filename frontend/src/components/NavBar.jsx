@@ -7,7 +7,7 @@ export default function NavBar({ view, onNavigate, hasProfile }) {
           onClick={() => onNavigate("landing")}
           style={{ background: "none", border: "none", padding: 0, cursor: "pointer" }}
         >
-          <img src="/logo.png" alt="Rolling Trailblazers Australia logo" />
+          <img src={`${import.meta.env.BASE_URL}logo.png`} alt="Rolling Trailblazers Australia logo" />
           <span className="brand-text">
             Rolling Trailblazers
             <small>Limits are optional</small>

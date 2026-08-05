@@ -23,9 +23,33 @@ export default function TrailResults({ trailId, profile, onBack }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [trailId, profile, JSON.stringify(modifiers)]);
 
-  if (!trailId) return <div className="container section"><p>Choose a trail from Discover first.</p></div>;
-  if (error) return <div className="container section"><p>Couldn't load this trail: {error}</p></div>;
-  if (!result) return <div className="container section"><p>Running the matching algorithm...</p></div>;
+  if (!trailId) {
+    return (
+      <div className="container section">
+        <div className="empty-state">Choose a trail from Discover first.</div>
+      </div>
+    );
+  }
+  if (error) {
+    return (
+      <div className="container section">
+        <div className="card state-card is-error">
+          <span className="state-icon" aria-hidden="true">⚠</span>
+          <div className="state-body"><p>Couldn't load this trail: {error}</p></div>
+        </div>
+      </div>
+    );
+  }
+  if (!result) {
+    return (
+      <div className="container section">
+        <div className="loading-state">
+          <span className="spinner" aria-hidden="true" />
+          Running the matching algorithm...
+        </div>
+      </div>
+    );
+  }
 
   const failingSegment = result.segmentResults.find((s) => !s.passable);
   const activeSegment = result.segmentResults.find((s) => s.segmentId === selectedSegment) || failingSegment || result.segmentResults[0];

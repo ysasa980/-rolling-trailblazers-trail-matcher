@@ -13,9 +13,33 @@ export default function Discover({ profile, onOpenTrail }) {
     api.matchAll(profile).then((data) => setResults(data.results)).catch((e) => setError(e.message));
   }, [profile]);
 
-  if (!profile) return <div className="container section"><p>Build your profile first to see trail matches.</p></div>;
-  if (error) return <div className="container section"><p>Couldn't load matches: {error}</p></div>;
-  if (!results) return <div className="container section"><p>Matching your profile against the Illawarra trail set...</p></div>;
+  if (!profile) {
+    return (
+      <div className="container section">
+        <div className="empty-state">Build your profile first to see trail matches.</div>
+      </div>
+    );
+  }
+  if (error) {
+    return (
+      <div className="container section">
+        <div className="card state-card is-error">
+          <span className="state-icon" aria-hidden="true">⚠</span>
+          <div className="state-body"><p>Couldn't load your trail matches: {error}</p></div>
+        </div>
+      </div>
+    );
+  }
+  if (!results) {
+    return (
+      <div className="container section">
+        <div className="loading-state">
+          <span className="spinner" aria-hidden="true" />
+          Matching your profile against the Illawarra trail set...
+        </div>
+      </div>
+    );
+  }
 
   const mapTrails = results.map((r) => ({ id: r.trailId, name: r.trailName, lat: r.lat, lng: r.lng, bestStatus: r.status }));
 

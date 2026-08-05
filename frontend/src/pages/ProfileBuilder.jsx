@@ -13,7 +13,16 @@ export default function ProfileBuilder({ options, profile, onSave, onCancel }) {
   const [step, setStep] = useState(0);
   const [draft, setDraft] = useState(profile || {});
 
-  if (!options) return <p>Loading profile options...</p>;
+  if (!options) {
+    return (
+      <div className="container section">
+        <div className="loading-state">
+          <span className="spinner" aria-hidden="true" />
+          Loading profile options...
+        </div>
+      </div>
+    );
+  }
 
   const current = STEPS[step];
   const choices = options[current.optionsKey] || [];

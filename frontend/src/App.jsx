@@ -14,8 +14,13 @@ export default function App() {
   const [selectedTrailId, setSelectedTrailId] = useState(null);
   const [apiError, setApiError] = useState(null);
 
-  useEffect(() => {
+  function loadOptions() {
+    setApiError(null);
     api.getOptions().then(setOptions).catch((e) => setApiError(e.message));
+  }
+
+  useEffect(() => {
+    loadOptions();
   }, []);
 
   function handleNavigate(next) {
@@ -38,8 +43,15 @@ export default function App() {
       <main className="app-main">
         {apiError && (
           <div className="container" style={{ marginTop: "1rem" }}>
-            <div className="card" style={{ borderColor: "var(--status-not-recommended)" }}>
-              Couldn't reach the RTBA API at <code>/api</code>: {apiError}. Is the backend running on port 4000?
+            <div className="card state-card is-error">
+              <span className="state-icon" aria-hidden="true">⚠</span>
+              <div className="state-body">
+                <p>
+                  <strong>We couldn't reach the RTBA service.</strong> This can happen if the service has
+                  been idle and is waking back up - it usually resolves within a few seconds.
+                </p>
+                <button className="btn-secondary" onClick={loadOptions}>Try again</button>
+              </div>
             </div>
           </div>
         )}
