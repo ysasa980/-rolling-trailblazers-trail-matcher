@@ -1,0 +1,287 @@
+[
+  {
+    "id": "blue-mile",
+    "name": "Wollongong Harbour to North Beach (Blue Mile)",
+    "region": "Wollongong",
+    "lat": -34.4278,
+    "lng": 150.8930,
+    "poc_role": "Gold-standard fully accessible benchmark",
+    "totalLengthM": 3500,
+    "segments": [
+      {
+        "id": "BM-1",
+        "label": "Harbour foreshore to Continental Pool",
+        "startM": 0,
+        "endM": 1800,
+        "surface": "sealed",
+        "gradientAvgPct": 1,
+        "gradientMaxPct": 2,
+        "widthMm": 3000,
+        "hazards": [],
+        "facilities": { "parking": true, "toilet": true, "seating": true, "shade": true },
+        "safety": { "mobileCoverage": "good", "isolation": "low", "emergencyAccess": "easy" }
+      },
+      {
+        "id": "BM-2",
+        "label": "Continental Pool to North Beach",
+        "startM": 1800,
+        "endM": 3500,
+        "surface": "sealed",
+        "gradientAvgPct": 1,
+        "gradientMaxPct": 3,
+        "widthMm": 2500,
+        "hazards": [],
+        "facilities": { "parking": true, "toilet": true, "seating": true, "shade": false },
+        "safety": { "mobileCoverage": "good", "isolation": "low", "emergencyAccess": "easy" }
+      }
+    ]
+  },
+  {
+    "id": "lake-illawarra",
+    "name": "Lake Illawarra Foreshore Path",
+    "region": "Lake Illawarra",
+    "lat": -34.5350,
+    "lng": 150.8500,
+    "poc_role": "Route segmentation and mapping logic (long, multi entry/exit)",
+    "totalLengthM": 7000,
+    "segments": [
+      {
+        "id": "LI-1",
+        "label": "Windang entry to Koonawarra Bay",
+        "startM": 0,
+        "endM": 2500,
+        "surface": "sealed",
+        "gradientAvgPct": 1,
+        "gradientMaxPct": 2,
+        "widthMm": 2200,
+        "hazards": [],
+        "facilities": { "parking": true, "toilet": true, "seating": true, "shade": true },
+        "safety": { "mobileCoverage": "good", "isolation": "low", "emergencyAccess": "easy" }
+      },
+      {
+        "id": "LI-2",
+        "label": "Koonawarra Bay to Primbee foreshore",
+        "startM": 2500,
+        "endM": 4700,
+        "surface": "compacted gravel",
+        "gradientAvgPct": 2,
+        "gradientMaxPct": 4,
+        "widthMm": 1600,
+        "hazards": ["bollard pinch point"],
+        "facilities": { "parking": false, "toilet": false, "seating": true, "shade": true },
+        "safety": { "mobileCoverage": "moderate", "isolation": "medium", "emergencyAccess": "moderate" }
+      },
+      {
+        "id": "LI-3",
+        "label": "Primbee foreshore to Lake Illawarra boat ramp",
+        "startM": 4700,
+        "endM": 7000,
+        "surface": "sealed",
+        "gradientAvgPct": 1,
+        "gradientMaxPct": 3,
+        "widthMm": 2000,
+        "hazards": [],
+        "facilities": { "parking": true, "toilet": false, "seating": true, "shade": false },
+        "safety": { "mobileCoverage": "good", "isolation": "low", "emergencyAccess": "easy" }
+      }
+    ]
+  },
+  {
+    "id": "shellharbour",
+    "name": "Shellharbour Coastal Walk",
+    "region": "Shellharbour",
+    "lat": -34.5810,
+    "lng": 150.8690,
+    "poc_role": "Introduces partial accessibility scoring (mixed accessible + semi-accessible)",
+    "totalLengthM": 4000,
+    "segments": [
+      {
+        "id": "SH-1",
+        "label": "Shellharbour Village boardwalk",
+        "startM": 0,
+        "endM": 1200,
+        "surface": "boardwalk",
+        "gradientAvgPct": 1,
+        "gradientMaxPct": 3,
+        "widthMm": 1800,
+        "hazards": [],
+        "facilities": { "parking": true, "toilet": true, "seating": true, "shade": true },
+        "safety": { "mobileCoverage": "good", "isolation": "low", "emergencyAccess": "easy" }
+      },
+      {
+        "id": "SH-2",
+        "label": "Blackbutt Reserve headland track",
+        "startM": 1200,
+        "endM": 2800,
+        "surface": "compacted gravel",
+        "gradientAvgPct": 4,
+        "gradientMaxPct": 7,
+        "widthMm": 1200,
+        "hazards": ["loose stones", "minor root exposure"],
+        "facilities": { "parking": false, "toilet": false, "seating": true, "shade": true },
+        "safety": { "mobileCoverage": "moderate", "isolation": "medium", "emergencyAccess": "moderate" }
+      },
+      {
+        "id": "SH-3",
+        "label": "Headland lookout steps",
+        "startM": 2800,
+        "endM": 4000,
+        "surface": "dirt",
+        "gradientAvgPct": 9,
+        "gradientMaxPct": 14,
+        "widthMm": 900,
+        "hazards": ["step(s)", "loose stones"],
+        "facilities": { "parking": false, "toilet": false, "seating": false, "shade": false },
+        "safety": { "mobileCoverage": "moderate", "isolation": "medium", "emergencyAccess": "difficult" }
+      }
+    ]
+  },
+  {
+    "id": "bulli-sandon",
+    "name": "Bulli Beach to Sandon Point Path",
+    "region": "Bulli",
+    "lat": -34.3410,
+    "lng": 150.9190,
+    "poc_role": "Edge cases: wind exposure, slight gradient, minor pinch points",
+    "totalLengthM": 3000,
+    "segments": [
+      {
+        "id": "BS-1",
+        "label": "Bulli Beach carpark to surf club",
+        "startM": 0,
+        "endM": 1000,
+        "surface": "sealed",
+        "gradientAvgPct": 2,
+        "gradientMaxPct": 4,
+        "widthMm": 2000,
+        "hazards": [],
+        "facilities": { "parking": true, "toilet": true, "seating": true, "shade": false },
+        "safety": { "mobileCoverage": "good", "isolation": "low", "emergencyAccess": "easy" }
+      },
+      {
+        "id": "BS-2",
+        "label": "Coastal cycleway to Sandon Point",
+        "startM": 1000,
+        "endM": 3000,
+        "surface": "sealed",
+        "gradientAvgPct": 3,
+        "gradientMaxPct": 6,
+        "widthMm": 1400,
+        "hazards": ["bollard pinch point"],
+        "facilities": { "parking": false, "toilet": false, "seating": true, "shade": false },
+        "safety": { "mobileCoverage": "good", "isolation": "low", "emergencyAccess": "moderate" }
+      }
+    ]
+  },
+  {
+    "id": "kiama-blowhole",
+    "name": "Kiama Harbour and Blowhole Point Walk",
+    "region": "Kiama",
+    "lat": -34.6720,
+    "lng": 150.8580,
+    "poc_role": "Introduces the \"Suitable with Caution\" classification",
+    "totalLengthM": 1800,
+    "segments": [
+      {
+        "id": "KB-1",
+        "label": "Kiama Harbour promenade",
+        "startM": 0,
+        "endM": 900,
+        "surface": "sealed",
+        "gradientAvgPct": 2,
+        "gradientMaxPct": 4,
+        "widthMm": 2200,
+        "hazards": [],
+        "facilities": { "parking": true, "toilet": true, "seating": true, "shade": true },
+        "safety": { "mobileCoverage": "good", "isolation": "low", "emergencyAccess": "easy" }
+      },
+      {
+        "id": "KB-2",
+        "label": "Blowhole Point approach",
+        "startM": 900,
+        "endM": 1800,
+        "surface": "sealed",
+        "gradientAvgPct": 6,
+        "gradientMaxPct": 9,
+        "widthMm": 1500,
+        "hazards": ["minor root exposure"],
+        "facilities": { "parking": true, "toilet": false, "seating": true, "shade": false },
+        "safety": { "mobileCoverage": "moderate", "isolation": "low", "emergencyAccess": "moderate" }
+      }
+    ]
+  },
+  {
+    "id": "nan-tien",
+    "name": "Nan Tien Temple Gardens Walk",
+    "region": "Berkeley",
+    "lat": -34.4630,
+    "lng": 150.8460,
+    "poc_role": "Benchmark for fully accessible controlled environments",
+    "totalLengthM": 1200,
+    "segments": [
+      {
+        "id": "NT-1",
+        "label": "Temple gardens loop",
+        "startM": 0,
+        "endM": 1200,
+        "surface": "sealed",
+        "gradientAvgPct": 1,
+        "gradientMaxPct": 2,
+        "widthMm": 2400,
+        "hazards": [],
+        "facilities": { "parking": true, "toilet": true, "seating": true, "shade": true },
+        "safety": { "mobileCoverage": "good", "isolation": "low", "emergencyAccess": "easy" }
+      }
+    ]
+  },
+  {
+    "id": "minnamurra",
+    "name": "Minnamurra Rainforest Loop Walk",
+    "region": "Budderoo National Park",
+    "lat": -34.6330,
+    "lng": 150.7350,
+    "poc_role": "Algorithm stress test: mixed surface + partial accessibility + steps",
+    "totalLengthM": 2600,
+    "segments": [
+      {
+        "id": "MM-1",
+        "label": "Visitor centre boardwalk",
+        "startM": 0,
+        "endM": 800,
+        "surface": "boardwalk",
+        "gradientAvgPct": 1,
+        "gradientMaxPct": 3,
+        "widthMm": 1600,
+        "hazards": [],
+        "facilities": { "parking": true, "toilet": true, "seating": true, "shade": true },
+        "safety": { "mobileCoverage": "moderate", "isolation": "medium", "emergencyAccess": "moderate" }
+      },
+      {
+        "id": "MM-2",
+        "label": "Rainforest floor track",
+        "startM": 800,
+        "endM": 1900,
+        "surface": "dirt",
+        "gradientAvgPct": 5,
+        "gradientMaxPct": 9,
+        "widthMm": 900,
+        "hazards": ["minor root exposure", "loose stones"],
+        "facilities": { "parking": false, "toilet": false, "seating": false, "shade": true },
+        "safety": { "mobileCoverage": "poor", "isolation": "high", "emergencyAccess": "difficult" }
+      },
+      {
+        "id": "MM-3",
+        "label": "Upper falls lookout steps",
+        "startM": 1900,
+        "endM": 2600,
+        "surface": "dirt",
+        "gradientAvgPct": 10,
+        "gradientMaxPct": 16,
+        "widthMm": 700,
+        "hazards": ["step(s)", "water crossing"],
+        "facilities": { "parking": false, "toilet": false, "seating": false, "shade": true },
+        "safety": { "mobileCoverage": "poor", "isolation": "high", "emergencyAccess": "difficult" }
+      }
+    ]
+  }
+]
